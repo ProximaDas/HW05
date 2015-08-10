@@ -5,13 +5,19 @@
 # words with more than 20 characters (not counting whitespace).
 ##############################################################################
 # Imports
-
+from sys import argv
 # Body
-
+def read_file():
+	file_handler = open(argv[1])
+	content = file_handler.read()
+	word_list = content.split()
+	for word in word_list:
+		if len(word) > 20:
+			print word
 
 ##############################################################################
 def main():
-    pass # Call your functions here.
+    read_file() # Call your functions here.
 
 if __name__ == '__main__':
     main()
